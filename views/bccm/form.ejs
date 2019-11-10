@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='/stylesheets/bccmForm.css'>
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <title>细胞小组每周聚会资料表</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+            <div class='container'>
+                <a class="navbar-brand" href="/bccmForm"><img src='images/logo.jpg' style="width:18%"/>细胞小组</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active mx-2">
+                        <a class="nav-link" href="/bccmForm">表格<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="/bccmForm/bccmTable">各区细胞小组提交资料表记录</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="/bccmForm/dataAnalysis">各区细胞小组分析表</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Disabled</a>
+                    </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <div class= 'container my-2 p-3 semi-tran' style="width: 80%;">
+        <h1 class='text-center'><storng>细胞小组每周聚会资料表</storng></h1><br>
+    
+        <p>请组长仔细填写每周聚会资料，谢谢！<br>
+        <span style="color:red">* 必须填写</span></p>
+        <form action='/bccmForm' method="POST">  <!--style="width: 800px;"-->
+
+            <div class="form-group">
+                <label for="date"><strong>聚会日期：</strong><span style="color:red">*</span></label>
+                <input class="form-control" type='date' name='cellGroupDate' id='date' required>
+            </div>
+
+            <div class="form-group">
+                    <label for="leader"><strong>组长：</strong><span style="color:red">*</span></label>
+                    <select class="form-control" id="leader" name='leader' required>
+                            <option selected disabled>请选择组长</option>
+                        <optgroup label="----张洁慈区长----">
+                            <option>黄惠香</option>
+                            <option>黄仁意</option>
+                            <option>周素珍</option>
+                            <option>冼镇寰</option>
+                        </optgroup>
+                        <optgroup label="----张顺恩区长----">
+                            <option>何道良</option>
+                            <option>李环环</option>
+                            <option>林礼协</option>
+                            <option>张凯淞</option>
+                            <option>赵德福</option>
+                        </optgroup>
+                        <optgroup label="----萧植仁区长----">
+                            <option>何紫雄</option>
+                            <option>华曼萍</option>
+                            <option>黄惠和</option>
+                            <option>黄建光</option>
+                            <option>卓玉庭</option>
+                        </optgroup>  
+                        <optgroup label="--黄德惟长老区长--">
+                            <option>郭桂珠</option>
+                            <option>黄健威</option>
+                            <option>雷明珠</option>
+                            <option>杨善荣</option>
+                            <option>杨秀娥</option>
+                        </optgroup>  
+                        <optgroup label="--罗威玲长老区长--">
+                            <option>黄运梅</option>
+                            <option>李晓薇</option>
+                            <option>李燕玉</option>
+                            <option>邱玉莲</option>
+                            <option>佘慧珍</option>
+                        </optgroup>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date"><strong>出席人数：</strong><span style="color:red">*</span></label>
+				<input class="form-control" type='number' name='numPpl' placeholder='出席人数' min='0' step='1' required>
+            </div>
+
+            <div class="form-group">
+                <label for="date"><strong>新朋友人数：</strong></label>
+                <input class="form-control" type='number' name='newPpl' placeholder='新朋友人数' min='0' step='1'>
+            </div>
+
+            <div class='form-group'>
+                <label><strong>小组活动：</strong><span style="color:red">*</span></label>
+                <div>
+                    <input type="radio" id="小组聚会" name="activity" value="小组聚会" required>
+                    <label for="小组聚会">小组聚会</label>
+                </div>
+                <div>
+                    <input type="radio" id="小组联谊" name="activity" value="小组联谊">
+                    <label for="小组联谊">小组联谊</label>
+                </div>
+                <div>
+                    <input type="radio" id="小组聚餐" name="activity" value="小组聚餐">
+                    <label for="小组聚餐">小组聚餐</label>
+                </div>
+                <div>
+                    <input type="radio" id="小组暂停" name="activity" value="小组暂停">
+                    <label for="小组暂停">小组暂停</label>
+                </div>
+                <div>
+                    <input type="radio" id="其他活动" name="activity" value="其他" onclick="showActivityTextBox()">其他：<br>
+                    <input type="text" id='otherActivity' name="otherActivity" style='width:60%' disabled/>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+                </div>
+            </div>
+            
+            <div class='form-group'>
+                <label><strong>信息：</strong><span style="color:red">*</span></label>
+
+                <div>
+                    <input type="radio" id="讲道信息" name="message" value="讲道信息" required>
+                    <label for="讲道信息">讲道信息（每日研经）</label>
+                </div>
+                <div>
+                    <input type="radio" id="认识神PPT" name="message" value="认识神PPT">
+                    <label for="认识神PPT">认识神 PPT</label>
+                </div>
+                <div>
+                    <input type="radio" id="每日研经释义" name="message" value="每日研经释义">
+                    <label for="每日研经释义">每日研经释义</label>
+                </div>
+                <div>
+                    <input type="radio" id="其他信息" name="message" value="其他">其他：<br>
+                    <input type="text" id='otherMsg' name="otherMsg" style='width:60%' disabled/>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="留言"><strong>留言：</strong></label><br>
+                <textarea id="留言" name="comment" style='width:60%'></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="困难"><strong>面对的困难/挑战：</strong></label><br>
+                <textarea id="困难" name="problem" style='width:60%'></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-warning"><strong>提交</strong></button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $(function (){
+            $("input[name='activity']").click(function(){
+                if($('#其他活动').is(':checked')){
+                    $('#otherActivity').removeAttr('disabled');
+                    $('#otherActivity').focus();
+                }else{
+                    $('#otherActivity').val('');
+                    $('#otherActivity').attr('disabled', 'disabled');
+                }
+            })
+
+            $("input[name='message']").click(function(){
+                if($('#其他信息').is(':checked')){
+                    $('#otherMsg').removeAttr('disabled');
+                    $('#otherMsg').focus();
+                }else{
+                    $('#otherMsg').val('');
+                    $('#otherMsg').attr('disabled', 'disabled');
+                }
+            })
+        })
+
+        // function showActivityTextBox(){
+        //     console.log('What');
+        //     var otherActivityRadioBtn = document.getElementById("其他活动");
+        //     var otherActivityTextBox = document.getElementById('otherActivity');
+        //     otherActivityTextBox.disabled = otherActivityRadioBtn.checked ? false : true;
+        //     if (!otherActivityTextBox.disabled){
+        //         otherActivityTextBox.focus();
+        //         console.log('What');
+        //     }
+
+        // }
+    </script>
+</body>
+</html>

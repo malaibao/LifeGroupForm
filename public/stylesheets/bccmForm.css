@@ -1,0 +1,57 @@
+body{
+    /* background: #ffe6cc;  fallback for old browsers */
+    /* background: -webkit-linear-gradient(to bottom, #0000ff, #3366ff, #99ccff);  /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to bottom, #0000ff, #3366ff, #99ccff); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1{
+    font-weight: 800;
+}
+
+.semi-tran{
+    /* background:rgba(25, 172, 123, 0.322); */
+    background: #F0F7EE;
+
+}
+
+.form-group > label {
+    font-size: 1.2em;
+}
+
+.btn-section{
+    display: inline;
+}
+
+.active{
+    font-weight: 800;
+    font-size: 1.1em;
+}
+
+/* .navbar-brand{
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 1.2em;
+} */
+
+.navbar-light .navbar-brand{
+    color: rgb(17, 82, 179);
+    font-family: 'ZCOOL KuaiLe', cursive;
+    width: 40%;
+}
+
+
+.parent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.alTitle{
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+}
+
+.duplicate-msg{
+    margin-top: 30%;
+    text-align: center;
+}

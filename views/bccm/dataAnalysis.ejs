@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='/stylesheets/bccmForm.css'>
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    
+    <title>细胞小组分析表</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <div class='container'>
+            <a class="navbar-brand" href="/bccmForm"><img src='../images/logo.jpg' style="width:18%"/>细胞小组</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/bccmForm">表格<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/bccmForm/bccmTable">各区细胞小组提交资料表记录</a>
+                </li>
+                <li class="nav-item mx-2 active">
+                    <a class="nav-link" href="/bccmForm/dataAnalysis">各区细胞小组分析表</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <form action='/bccmForm/retrieve' method="POST">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">请选择区长：</label>
+                <select class="form-control" id="selectYow">
+                  <option value='' disabled selected>----选择区长----</option>
+                  <option value='张洁慈区长'>张洁慈区长</option>
+                  <option value='张顺恩区长'>张顺恩区长</option>
+                  <option value='萧植仁区长'>萧植仁区长</option>
+                  <option value='黄德惟长老区长'>黄德惟长老区长</option>
+                  <option value='罗威玲长老区长'>罗威玲长老区长</option>
+                </select>
+              </div>
+        </form>
+
+        <table class="table">
+
+        </table>
+    </div>
+
+
+        
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+    <script>
+        $(function(){
+            $('#selectYow').on('change', function(){
+                // alert("OKAY!");
+                var picked = '/bccmForm/retrieve/' + $('#selectYow').val();
+                var dataTable = $('table');
+
+                dataTable.html('');
+
+                $.ajax({
+                    url: picked,
+                    contentType: 'application/json',
+                    success: function(res){
+                        console.log(res);
+
+                        dataTable.append("\
+                            <thead>\
+                                <tr>\
+                                <th scope='col' colspan='7' class='text-center'>" +  $('#selectYow').val() + "</th>\
+                                </tr>\
+                                <tr>\
+                                <th>" + '聚会时间' +"</th>\
+                                <th>" + '组长' +"</th>\
+                                <th>" + '出席人数' +"</th>\
+                                <th>" + '新朋友人数' +"</th>\
+                                <th>" + '小组活动' +"</th>\
+                                <th>" + '信息' +"</th>\
+                                <th>" + '面对的挑战' +"</th>\
+                                </tr>\
+                            </thead>\
+                        ");
+
+                        var weekNum = moment(res.data[0].cellGroupDate, "YYYYMMDD").isoWeek();  
+                        console.log('first weekNum' + weekNum);                      
+                        res.data.forEach(function(d){
+                            console.log(weekNum);
+                            if( moment(d.cellGroupDate, "YYYYMMDD").isoWeek() != weekNum ){
+                            // if( weekNum == 0){
+                                console.log('SHOULD BE HEREE');
+                                dataTable.append("\
+                                    <tr style='border-top: thick solid;'>\
+                                        <td>" + d.cellGroupDate.substr(0,10) + "</td>\
+                                        <td>" + d.leader + "</td>\
+                                        <td>" + d.numPpl + "</td>\
+                                        <td>" + d.newPpl + "</td>\
+                                        <td>" + d.activity + "</td>\
+                                        <td>" + d.message + "</td>\
+                                        <td>" + d.problem + "</td>\
+                                    </tr>\
+                                    ");
+                                    weekNum = moment(d.cellGroupDate, "YYYYMMDD").isoWeek();
+                            }else{
+                                dataTable.append("\
+                                    <tr>\
+                                        <td>" + d.cellGroupDate.substr(0,10) + "</td>\
+                                        <td>" + d.leader + "</td>\
+                                        <td>" + d.numPpl + "</td>\
+                                        <td>" + d.newPpl + "</td>\
+                                        <td>" + d.activity + "</td>\
+                                        <td>" + d.message + "</td>\
+                                        <td>" + d.problem + "</td>\
+                                    </tr>\
+                                    ");
+                            }
+                        })
+                    }
+                })
+            })
+        })
+    </script>
+    
+</body>
+</html>

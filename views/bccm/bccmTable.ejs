@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='/stylesheets/bccmForm.css'>
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <title>各区细胞小组提交表格记录</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <div class='container'>
+                <a class="navbar-brand" href="/bccmForm"><img src='../images/logo.jpg' alt="..." style="width:18%"/>细胞小组</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/bccmForm">表格<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/bccmForm/bccmTable">各区细胞小组提交资料表记录</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/bccmForm/dataAnalysis">各区细胞小组分析表</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container my-4'>
+        
+        <h1 class='text-center'>各区细胞小组提交资料表记录</h1>
+        <p class='p-3 mb-2 bg-info text-white'>下面是根据区长分类显示的细胞小组、小组活动日期和提交日期。</p>
+        <p class='p-3 mb-2 bg-info text-white'>如果没有记录，表示组长还没提交资料表。</p>
+        <div class='parent mt-3'>
+            <div class='mb-3 border border-dark'>
+                <% if(results.a.length > 0){ %>
+                    <div class='alTitle text-center border-bottom border-dark'><strong><%= results.a[0].areaLeader %></strong></div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">小组组长</th>
+                            <th scope="col">小组活动日期</th>
+                            <th scope="col">提交日期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% results.a.forEach(function(x){ %>
+                                <tr>
+                                    <td><%= x.leader %></td>
+                                    <td><%= x.cellGroupDate.toISOString().substr(0,10) %></td>
+                                    <td><%= x.submittedOn.toISOString().substr(0,10) %></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                <% } %>
+            </div>
+
+            <div class='mb-3 border border-dark'>
+                <% if(results.b.length > 0){ %>
+                    <div class='alTitle text-center border-bottom border-dark'><strong><%= results.b[0].areaLeader %></strong></div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">小组组长</th>
+                            <th scope="col">小组活动日期</th>
+                            <th scope="col">提交日期</th>
+                            </tr>
+                        </thead>
+                        <tbosdy>
+                            <% results.b.forEach(function(x){ %>
+                                <tr>
+                                    <td><%= x.leader %></td>
+                                    <td><%= x.cellGroupDate.toISOString().substr(0,10) %></td>
+                                    <td><%= x.submittedOn.toISOString().substr(0,10) %></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                <% } %>
+            </div>
+
+            <div class='mb-3 border border-dark'>
+                <% if(results.c.length > 0){ %>
+                    <div class='alTitle text-center border-bottom border-dark'><strong><%= results.c[0].areaLeader %></strong></div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">小组组长</th>
+                            <th scope="col">小组活动日期</th>
+                            <th scope="col">提交日期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% results.c.forEach(function(x){ %>
+                                <tr>
+                                    <td><%= x.leader %></td>
+                                    <td><%= x.cellGroupDate.toISOString().substr(0,10) %></td>
+                                    <td><%= x.submittedOn.toISOString().substr(0,10) %></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                <% } %>
+            </div>
+
+            <div class='mb-3 border border-dark'>
+                <% if(results.d.length > 0){ %>
+                    <div class='alTitle text-center border-bottom border-dark'><strong><%= results.d[0].areaLeader %></strong></div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">小组组长</th>
+                            <th scope="col">小组活动日期</th>
+                            <th scope="col">提交日期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% results.d.forEach(function(x){ %>
+                                <tr>
+                                    <td><%= x.leader %></td>
+                                    <td><%= x.cellGroupDate.toISOString().substr(0,10) %></td>
+                                    <td><%= x.submittedOn.toISOString().substr(0,10) %></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                <% } %>
+            </div>
+
+            <div class='mb-3 border border-dark'>
+                <% if(results.e.length > 0){ %>
+                    <div class='alTitle text-center border-bottom border-dark'><strong><%= results.e[0].areaLeader %></strong></div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">小组组长</th>
+                            <th scope="col">小组活动日期</th>
+                            <th scope="col">提交日期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% results.e.forEach(function(x){ %>
+                                <tr>
+                                    <td><%= x.leader %></td>
+                                    <td><%= x.cellGroupDate.toISOString().substr(0,10) %></td>
+                                    <td><%= x.submittedOn.toISOString().substr(0,10) %></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                <% } %>
+            </div>
+
+                  
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
