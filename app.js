@@ -11,10 +11,12 @@ seedDB              = require('./seed');
 var indexRoutes = require('./routes/index'); //index route
 var bccmRoutes = require('./routes/bccmForm'); //bccmForm route
 
-mongoose.connect("mongodb://localhost:27017/bccm",
-{
-    userNewUrlParser: true
-});
+
+mongoose.connect("mongodb+srv://hellobye:hellobye123@cluster0-09sus.mongodb.net/BCCM?retryWrites=true&w=majority", {useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost:27017/bccm",
+// {
+//     userNewUrlParser: true
+// });
 
 mongoose.set('userUnifiedTopology', true);
 
