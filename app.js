@@ -54,7 +54,7 @@ app.get('/hello', (req, res)=>{
 //     res.render('landing');
 // })
 
-//seedDB();
+seedDB();
 
 app.listen(3001, () => {
     console.log('Server is running.')
