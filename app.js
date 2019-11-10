@@ -47,10 +47,10 @@ app.use((req, res, next)=>{
 	next();
 });
 
-app.get('/hello', (req, res)=>{
-    req.flash('whatttt', 'whyt');
+// app.get('/hello', (req, res)=>{
+//     req.flash('whatttt', 'whyt');
 
-})
+// })
 
 app.get('/', (req, res) => {
     res.render('landing');
