@@ -47,6 +47,8 @@ app.use((req, res, next)=>{
 	next();
 });
 
+seedDB();
+
 // app.get('/hello', (req, res)=>{
 //     req.flash('whatttt', 'whyt');
 
@@ -56,9 +58,12 @@ app.get('/', (req, res) => {
     res.render('landing');
 })
 
-seedDB();
 
-app.listen(3001, () => {
-    console.log('Server is running.')
-})
 
+// app.listen(3001, () => {
+//     console.log('Server is running.')
+// })
+
+app.listen(process.env.PORT, process.env.IP, 3000, ()=>{
+	console.log('Server is running. Good');
+});
