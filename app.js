@@ -52,9 +52,9 @@ app.get('/hello', (req, res)=>{
 
 })
 
-// app.get('/', (req, res) => {
-//     res.render('landing');
-// })
+app.get('/', (req, res) => {
+    res.render('landing');
+})
 
 seedDB();
 
