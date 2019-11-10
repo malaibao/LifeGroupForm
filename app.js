@@ -47,7 +47,7 @@ app.use((req, res, next)=>{
 	next();
 });
 
-seedDB();
+// seedDB();
 
 // app.get('/hello', (req, res)=>{
 //     req.flash('whatttt', 'whyt');
