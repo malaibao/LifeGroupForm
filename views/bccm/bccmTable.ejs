@@ -40,8 +40,9 @@
         <p class='p-3 mb-2 bg-info text-white'>下面是根据区长分类显示的细胞小组、小组活动日期和提交日期。</p>
         <p class='p-3 mb-2 bg-info text-white'>如果没有记录，表示组长还没提交资料表。</p>
         <div class='parent mt-3'>
-            <div class='mb-3 border border-dark'>
+           
                 <% if(results.a.length > 0){ %>
+                    <div class='mb-3 border border-dark'>
                     <div class='alTitle text-center border-bottom border-dark'><strong><%= results.a[0].areaLeader %></strong></div>
                     <table class="table table-striped">
                         <thead>
@@ -61,11 +62,11 @@
                             <% }) %>
                         </tbody>
                     </table>
-                <% } %>
-            </div>
-
-            <div class='mb-3 border border-dark'>
+                </div>
+                <% } %>          
+           
                 <% if(results.b.length > 0){ %>
+                    <div class='mb-3 border border-dark'>
                     <div class='alTitle text-center border-bottom border-dark'><strong><%= results.b[0].areaLeader %></strong></div>
                     <table class="table table-striped">
                         <thead>
@@ -85,11 +86,11 @@
                             <% }) %>
                         </tbody>
                     </table>
+                </div>
                 <% } %>
-            </div>
-
-            <div class='mb-3 border border-dark'>
+                  
                 <% if(results.c.length > 0){ %>
+                    <div class='mb-3 border border-dark'>
                     <div class='alTitle text-center border-bottom border-dark'><strong><%= results.c[0].areaLeader %></strong></div>
                     <table class="table table-striped">
                         <thead>
@@ -109,11 +110,11 @@
                             <% }) %>
                         </tbody>
                     </table>
+                </div>
                 <% } %>
-            </div>
-
-            <div class='mb-3 border border-dark'>
+                       
                 <% if(results.d.length > 0){ %>
+                    <div class='mb-3 border border-dark'></div>
                     <div class='alTitle text-center border-bottom border-dark'><strong><%= results.d[0].areaLeader %></strong></div>
                     <table class="table table-striped">
                         <thead>
@@ -133,11 +134,11 @@
                             <% }) %>
                         </tbody>
                     </table>
+                </div>
                 <% } %>
-            </div>
-
-            <div class='mb-3 border border-dark'>
+            
                 <% if(results.e.length > 0){ %>
+                    <div class='mb-3 border border-dark'>
                     <div class='alTitle text-center border-bottom border-dark'><strong><%= results.e[0].areaLeader %></strong></div>
                     <table class="table table-striped">
                         <thead>
@@ -157,8 +158,9 @@
                             <% }) %>
                         </tbody>
                     </table>
+                </div>
                 <% } %>
-            </div>
+           
 
                   
         </div>

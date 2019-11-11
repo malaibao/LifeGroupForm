@@ -64,6 +64,6 @@ app.get('/', (req, res) => {
 //     console.log('Server is running.')
 // })
 
-app.listen(process.env.PORT, process.env.IP, 3000, ()=>{
+app.listen(process.env.PORT, process.env.IP, 3001, ()=>{
 	console.log('Server is running. Good');
 });
