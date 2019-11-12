@@ -28,7 +28,7 @@ router.post('/', (req, res) =>{
                         newPpl: req.body.newPpl == ''? 0 : req.body.newPpl,
                         activity: req.body.activity == '其他'? req.body.otherActivity : req.body.activity,
                         message: req.body.message == '其他'? req.body.otherMsg : req.body.message,
-                        comment: req.body.comment,
+                        // comment: req.body.comment,
                         problem: req.body.problem,
                         areaLeader: foundAreaLeader.areaLeader,
                         submittedOn: Date.now()

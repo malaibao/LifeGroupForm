@@ -11,7 +11,6 @@ var data = [
         newPpl: 1,
         activity: '小组聚会',
         message: '认识神PPT',
-        comment: '感谢神',
         problem: '下雨天',
         areaLeader: '张洁慈区长',
         submittedOn: Date.now()
@@ -23,7 +22,6 @@ var data = [
         newPpl: 0,
         activity: '小组聚会',
         message: '认识神PPT',
-        comment: '感谢神',
         problem: '赛车',
         areaLeader: '张洁慈区长',
         submittedOn: Date.now()

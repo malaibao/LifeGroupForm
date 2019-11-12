@@ -8,7 +8,6 @@ var formSchema = new mongoose.Schema(
         newPpl: Number,
         activity: String,
         message: String,
-        comment: String,
         problem: String,
         areaLeader: String,
         submittedOn: Date
