@@ -49,10 +49,13 @@
                 </select>
               </div>
         </form>
+        <p>Table can be scrolled horizontally. </p>
 
-        <table class="table">
-
-        </table>
+        <div style='overflow-x:auto'>
+            <!-- <table class="table" style='overflow-y:hidden'> -->
+            <table class="table" style="min-width: 800px">
+            </table>
+          </div>
     </div>
 
 
@@ -80,16 +83,17 @@
                         dataTable.append("\
                             <thead>\
                                 <tr>\
-                                <th scope='col' colspan='7' class='text-center'>" +  $('#selectYow').val() + "</th>\
+                                <th scope='col' colspan='8' class='text-center'>" +  $('#selectYow').val() + "</th>\
                                 </tr>\
                                 <tr>\
-                                <th>" + '聚会时间' +"</th>\
-                                <th>" + '组长' +"</th>\
-                                <th>" + '出席人数' +"</th>\
-                                <th>" + '新朋友人数' +"</th>\
-                                <th>" + '小组活动' +"</th>\
-                                <th>" + '信息' +"</th>\
-                                <th>" + '面对的挑战' +"</th>\
+                                <th style='width: 10%'>" + '聚会时间' +"</th>\
+                                <th style='width: 8%'>" + '组长' +"</th>\
+                                <th style='width: 10%'>" + '出席人数' +"</th>\
+                                <th style='width: 10%'>" + '新朋友人数' +"</th>\
+                                <th style='width: 12%'>" + '小组活动' +"</th>\
+                                <th style='width: 15%'>" + '信息' +"</th>\
+                                <th style='width: 15%'>" + '留言' +"</th>\
+                                <th style='width: 20%'>" + '面对的挑战' +"</th>\
                                 </tr>\
                             </thead>\
                         ");
@@ -109,6 +113,7 @@
                                         <td>" + d.newPpl + "</td>\
                                         <td>" + d.activity + "</td>\
                                         <td>" + d.message + "</td>\
+                                        <td>" + d.comment + "</td>\
                                         <td>" + d.problem + "</td>\
                                     </tr>\
                                     ");
@@ -122,6 +127,7 @@
                                         <td>" + d.newPpl + "</td>\
                                         <td>" + d.activity + "</td>\
                                         <td>" + d.message + "</td>\
+                                        <td>" + d.comment + "</td>\
                                         <td>" + d.problem + "</td>\
                                     </tr>\
                                     ");
