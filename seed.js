@@ -32,6 +32,10 @@ var data = [
 var areaLeaderData = [
     {   
         areaLeader: '张洁慈区长',
+        cellGroupLeader:'Alex Voo'
+    },
+    {   
+        areaLeader: '张洁慈区长',
         cellGroupLeader:'黄惠香'
     },
     {   
