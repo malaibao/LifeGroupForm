@@ -53,7 +53,7 @@ router.post('/', (req, res) =>{
 router.get('/bccmTable', (req, res)=>{
     var results = {};
 
-    CellGroupFormSubmission.find({}, (err, submissions) =>{
+    CellGroupFormSubmission.find({}).sort({cellGroupDate : 'desc'}).exec( (err, submissions)=>{
         if(err)
             console.log('Problem loading all submission from db');
         else{
@@ -92,19 +92,14 @@ router.get('/bccmTable', (req, res)=>{
                 }else if(x.areaLeader == '黄德惟长老区长' && dNum < 20){
                     results[d].push(x);
                     dNum++;
-                }else if(x.areaLeader == '罗威玲长老区长' && eNum < 20)
+                }else if(x.areaLeader == '罗威玲长老区长' && eNum < 20){
                     results[e].push(x);
                     eNum++;
+                }
             });
-
-            // console.log('result isss');
-            // console.log(results);
-
-            res.render('bccm/bccmTable', {results: results}); //
-        }
+            res.render('bccm/bccmTable', {results: results});
+        }  
     })
-
-
 });
 
 router.get('/dataAnalysis', (req, res)=>{
