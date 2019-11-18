@@ -1,7 +1,8 @@
 var express                 = require('express'),
     router                  = express.Router(),
     CellGroupFormSubmission = require('../models/cellGroupForm'),
-    areaLeaderList          = require('../models/areaLeader');
+    areaLeaderList          = require('../models/areaLeader'),
+    removeOldData		    = require('../removeOldData');
 
 //var al = ['张洁慈区长','张顺恩区长','萧植仁区长','黄德惟长老区长','罗威玲长老区长'];
 
@@ -28,7 +29,6 @@ router.post('/', (req, res) =>{
                         newPpl: req.body.newPpl == ''? 0 : req.body.newPpl,
                         activity: req.body.activity == '其他'? req.body.otherActivity : req.body.activity,
                         message: req.body.message == '其他'? req.body.otherMsg : req.body.message,
-                        // comment: req.body.comment,
                         problem: req.body.problem,
                         areaLeader: foundAreaLeader.areaLeader,
                         submittedOn: Date.now()
@@ -42,6 +42,7 @@ router.post('/', (req, res) =>{
                         }
                     });
                 }
+                
             })
         }else{ 
             //res.send('You already submitted one copy.');   
@@ -51,6 +52,7 @@ router.post('/', (req, res) =>{
 });
 
 router.get('/bccmTable', (req, res)=>{
+    removeOldData();
     var results = {};
 
     CellGroupFormSubmission.find({}).sort({cellGroupDate : 'desc'}).exec( (err, submissions)=>{
@@ -107,7 +109,7 @@ router.get('/dataAnalysis', (req, res)=>{
 });
 
 router.get('/retrieve/:areaLeader', (req, res)=>{
-
+    removeOldData();
     CellGroupFormSubmission.find({areaLeader: req.params.areaLeader}).sort({cellGroupDate : 'asc'}).exec( (err, foundData)=>{
         if(err){
             res.send('Problem ehhhh');
