@@ -22,25 +22,41 @@ router.post('/', (req, res) =>{
                 if(err)
                     console.log('error finding areaLeader from DB');
                 else{
-                    var newSub = {
-                        cellGroupDate: req.body.cellGroupDate,
-                        leader: req.body.leader,
-                        numPpl: req.body.numPpl,
-                        newPpl: req.body.newPpl == ''? 0 : req.body.newPpl,
-                        activity: req.body.activity == '其他'? req.body.otherActivity : req.body.activity,
-                        message: req.body.message == '其他'? req.body.otherMsg : req.body.message,
-                        problem: req.body.problem,
-                        areaLeader: foundAreaLeader.areaLeader,
-                        submittedOn: Date.now()
-                    }
-                
-                    CellGroupFormSubmission.create(newSub, (err, newSubmission) => {
-                        if(err)
-                            console.log('Problem adding new submission in POST');
-                        else{
-                            res.render('bccm/confirmation', {newSub: newSubmission, msg: '资料已成功输入如下'}); 
+                    let pivotDate = new Date();
+                    // pivotDate = new Date(pivotDate.getFullYear)
+                    pivotDate.setMonth(pivotDate.getMonth() - 2);
+                    console.log('pivotDate is ' + pivotDate.toLocaleString());
+                    console.log('req.body.cellGroupDate is ' + req.body.cellGroupDate);
+                    console.log('typeof req.body.cellGroupDate is ' + typeof req.body.cellGroupDate);
+
+                    let d = new Date(req.body.cellGroupDate);
+                    console.log('d is ' + d.toISOString());
+
+                    if(d < pivotDate){
+                        console.log('d < pivotDate');
+                        res.render('bccm/lateSubmission', {msg: '小组聚会日期不在两个月内，请输入最新日期资料!'}); 
+                    }else{
+                        var newSub = {
+                            cellGroupDate: req.body.cellGroupDate,
+                            leader: req.body.leader,
+                            numPpl: req.body.numPpl,
+                            newPpl: req.body.newPpl == ''? 0 : req.body.newPpl,
+                            activity: req.body.activity == '其他'? req.body.otherActivity : req.body.activity,
+                            message: req.body.message == '其他'? req.body.otherMsg : req.body.message,
+                            problem: req.body.problem,
+                            areaLeader: foundAreaLeader.areaLeader,
+                            submittedOn: Date.now()
                         }
-                    });
+                    
+                        CellGroupFormSubmission.create(newSub, (err, newSubmission) => {
+                            if(err)
+                                console.log('Problem adding new submission in POST');
+                            else{
+                                res.render('bccm/confirmation', {newSub: newSubmission, msg: '资料已成功输入如下'}); 
+                            }
+                        });
+                    }
+                    
                 }
                 
             })

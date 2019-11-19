@@ -38,6 +38,13 @@ h1{
     width: 40%;
 }
 
+.active{
+    /* background-color: #45a3e6; */
+    font-size: 1.1em;
+    font-weight: 800;
+    text-decoration: underline;
+}
+
 
 .parent{
     display: flex;
