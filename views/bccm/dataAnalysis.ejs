@@ -28,7 +28,7 @@
                     <a class="nav-link" href="/bccmForm/bccmTable">各区细胞小组提交资料表记录</a>
                 </li>
                 <li class="nav-item mx-2 active">
-                    <a class="nav-link" href="/bccmForm/dataAnalysis">各区细胞小组分析表</a>
+                    <a class="nav-link" href="/bccmForm/dataAnalysis">各区细胞小组资料</a>
                 </li>
                 </ul>
             </div>
@@ -50,6 +50,7 @@
               </div>
         </form>
         <p>Table can be scrolled horizontally. </p>
+        <div class='container' id='displayBtn' style='height: 50px;'></div>
 
         <div style='overflow-x:auto'>
             <!-- <table class="table" style='overflow-y:hidden'> -->
@@ -86,7 +87,7 @@
                                 <th scope='col' colspan='8' class='text-center'>" +  $('#selectYow').val() + "</th>\
                                 </tr>\
                                 <tr>\
-                                <th style='width: 12%'>" + '聚会时间' +"</th>\
+                                <th style='width: 12%'>" + '聚会日期' +"</th>\
                                 <th style='width: 10%'>" + '组长' +"</th>\
                                 <th style='width: 10%'>" + '出席人数' +"</th>\
                                 <th style='width: 13%'>" + '新朋友人数' +"</th>\
@@ -130,6 +131,42 @@
                                     ");
                             }
                         })
+                        
+                        var str = $('#selectYow').val() + '\r\n';
+                        str += '聚会日期,组长,出席人数,新朋友人数,小组活动,信息,面对的挑战/留言\r\n';
+                        res.data.forEach(d => {
+                            str += d.cellGroupDate.substr(0,10) + ',' +
+                                  d.leader + ',' +
+                                  d.numPpl + ',' + 
+                                  d.newPpl + ',' +
+                                  d.activity + ',' + 
+                                  d.message + ',' +
+                                  d.problem + '\r\n';
+                        });
+
+                        // CREATE CSV
+                        var csv = "\ufeff"+str;
+                        var exportedFilenmae = 'export.csv';
+                        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                        if (navigator.msSaveBlob) { // IE 10+
+                            navigator.msSaveBlob(blob, exportedFilenmae);
+                        } else {
+                            var link = document.createElement("a");
+                            if (link.download !== undefined) { // feature detection
+                                // Browsers that support HTML5 download attribute
+                                var url = URL.createObjectURL(blob);
+
+                                var displaySec = document.getElementById('displayBtn');
+                                if(displaySec.firstChild != null)
+                                    displaySec.firstChild.remove();
+
+                                link.setAttribute("href", url);
+                                link.setAttribute("download", exportedFilenmae);
+                                link.style.visibility = 'visible';
+                                displaySec.appendChild(link);
+                                link.innerText='Download CSV';
+                            }
+                        }
                     }
                 })
             })
