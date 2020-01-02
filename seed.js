@@ -31,24 +31,24 @@ var data = [
 
 var areaLeaderData = [
     {   
-        areaLeader: '张洁慈区长',
-        cellGroupLeader:'Alex Voo'
-    },
-    {   
-        areaLeader: '张洁慈区长',
+        areaLeader: '张洁慈长老',
         cellGroupLeader:'黄惠香'
     },
     {   
-        areaLeader: '张洁慈区长',
+        areaLeader: '张洁慈长老',
         cellGroupLeader:'黄仁意'
     },
     {   
-        areaLeader: '张洁慈区长',
-        cellGroupLeader:'周素珍'
+        areaLeader: '张洁慈长老',
+        cellGroupLeader:'邬忠源'
     },
     {   
-        areaLeader: '张洁慈区长',
-        cellGroupLeader:'冼镇寰'
+        areaLeader: '张洁慈长老',
+        cellGroupLeader:'杨意聪'
+    },
+    {   
+        areaLeader: '张洁慈长老',
+        cellGroupLeader:'周素珍'
     },
     {   
         areaLeader: '张顺恩区长',
@@ -64,7 +64,7 @@ var areaLeaderData = [
     },
     {   
         areaLeader: '张顺恩区长',
-        cellGroupLeader:'张凯淞'
+        cellGroupLeader:'刘珮珊'
     },
     {   
         areaLeader: '张顺恩区长',
@@ -76,6 +76,10 @@ var areaLeaderData = [
     },
     {   
         areaLeader: '萧植仁区长',
+        cellGroupLeader:'洪子威'
+    },
+    {   
+        areaLeader: '萧植仁区长',
         cellGroupLeader:'华曼萍'
     },
     {   
@@ -84,7 +88,7 @@ var areaLeaderData = [
     },
     {   
         areaLeader: '萧植仁区长',
-        cellGroupLeader:'黄建光'
+        cellGroupLeader:'黄健光'
     },
     {   
         areaLeader: '萧植仁区长',
@@ -111,24 +115,52 @@ var areaLeaderData = [
         cellGroupLeader:'杨秀娥'
     },
     {   
-        areaLeader: '罗威玲长老区长',
+        areaLeader: '罗威玲长老',
         cellGroupLeader:'黄运梅'
     },
     {   
-        areaLeader: '罗威玲长老区长',
+        areaLeader: '罗威玲长老',
         cellGroupLeader:'李晓薇'
     },
     {   
-        areaLeader: '罗威玲长老区长',
+        areaLeader: '罗威玲长老',
         cellGroupLeader:'李燕玉'
     },
     {   
-        areaLeader: '罗威玲长老区长',
+        areaLeader: '罗威玲长老',
         cellGroupLeader:'邱玉莲'
     },
     {   
-        areaLeader: '罗威玲长老区长',
+        areaLeader: '罗威玲长老',
+        cellGroupLeader:'沈玉珠'
+    },
+    {   
+        areaLeader: '罗威玲长老',
         cellGroupLeader:'佘慧珍'
+    },
+    {   
+        areaLeader: '罗凯伦长老',
+        cellGroupLeader:'韩素贞'
+    },
+    {   
+        areaLeader: '罗凯伦长老',
+        cellGroupLeader:'李玉玲'
+    },
+    {   
+        areaLeader: '罗凯伦长老',
+        cellGroupLeader:'练秋娥'
+    },
+    {   
+        areaLeader: '罗凯伦长老',
+        cellGroupLeader:'邬菊玲'
+    },
+    {   
+        areaLeader: '罗凯伦长老',
+        cellGroupLeader:'谢美玲'
+    },
+    {   
+        areaLeader: '罗凯伦长老',
+        cellGroupLeader:'钟惠梅'
     },
 ]
 

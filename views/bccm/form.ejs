@@ -27,7 +27,7 @@
                         <a class="nav-link" href="/bccmForm/bccmTable">各区细胞小组提交资料表记录</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="/bccmForm/dataAnalysis">各区细胞小组资料</a>
+                        <a class="nav-link" href="/bccmForm/showData">各区细胞小组资料</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Pricing</a>
@@ -56,40 +56,50 @@
                     <label for="leader"><strong>组长：</strong><span style="color:red">*</span></label>
                     <select class="form-control" id="leader" name='leader' required>
                             <option selected disabled>请选择组长</option>
-                        <optgroup label="----张洁慈区长----">
-                            <option>Alex Voo</option>
+                        <optgroup label="----张洁慈长老----">
                             <option>黄惠香</option>
                             <option>黄仁意</option>
+                            <option>邬忠源</option>
+                            <option>杨意聪</option>
                             <option>周素珍</option>
-                            <option>冼镇寰</option>
                         </optgroup>
                         <optgroup label="----张顺恩区长----">
                             <option>何道良</option>
                             <option>李环环</option>
                             <option>林礼协</option>
-                            <option>张凯淞</option>
+                            <option>刘珮珊</option>
                             <option>赵德福</option>
                         </optgroup>
                         <optgroup label="----萧植仁区长----">
                             <option>何紫雄</option>
+                            <option>洪子威</option>
                             <option>华曼萍</option>
                             <option>黄惠和</option>
-                            <option>黄建光</option>
+                            <option>黄健光</option>
                             <option>卓玉庭</option>
                         </optgroup>  
-                        <optgroup label="--黄德惟长老区长--">
+                        <optgroup label="--黄德惟长老--">
                             <option>郭桂珠</option>
                             <option>黄健威</option>
                             <option>雷明珠</option>
                             <option>杨善荣</option>
                             <option>杨秀娥</option>
                         </optgroup>  
-                        <optgroup label="--罗威玲长老区长--">
+                        <optgroup label="--罗威玲长老--">
                             <option>黄运梅</option>
                             <option>李晓薇</option>
                             <option>李燕玉</option>
+                            <option>沈玉珠</option>
                             <option>邱玉莲</option>
                             <option>佘慧珍</option>
+                        </optgroup>
+                        <optgroup label="--罗凯伦长老--">
+                            <option>韩素贞</option>
+                            <option>李玉玲</option>
+                            <option>练秋娥</option>
+                            <option>邬菊玲</option>
+                            <option>谢美玲</option>
+                            <option>钟惠梅</option>
                         </optgroup>
                     </select>
             </div>
@@ -117,6 +127,10 @@
                 <div>
                     <input type="radio" id="小组聚餐" name="activity" value="小组聚餐">
                     <label for="小组聚餐">小组聚餐</label>
+                </div>
+                <div>
+                    <input type="radio" id="没有聚会" name="activity" value="没有聚会">
+                    <label for="小组暂停">没有聚会</label>
                 </div>
                 <div>
                     <input type="radio" id="小组暂停" name="activity" value="小组暂停">

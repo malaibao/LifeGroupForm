@@ -122,8 +122,8 @@ router.get('/bccmTable', (req, res)=>{
     })
 });
 
-router.get('/dataAnalysis', (req, res)=>{
-    res.render('bccm/dataAnalysis');
+router.get('/showData', (req, res)=>{
+    res.render('bccm/showData');
 });
 
 router.get('/retrieve/:areaLeader', (req, res)=>{
