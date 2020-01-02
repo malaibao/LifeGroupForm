@@ -100,7 +100,7 @@ router.get('/bccmTable', (req, res)=>{
                 // console.log('What is inside a ' + x[a]);
                
                 // console.log(typeof x);
-                if(x.areaLeader.toString() == '张洁慈区长' && aNum < 20){
+                if(x.areaLeader.toString() == '张洁慈长老' && aNum < 20){
                     results[a].push(x);
                     aNum++;
                 }else if(x.areaLeader == '张顺恩区长' && bNum < 20){
@@ -109,10 +109,10 @@ router.get('/bccmTable', (req, res)=>{
                 }else if(x.areaLeader == '萧植仁区长' && cNum < 20){
                     results[c].push(x);
                     cNum++;
-                }else if(x.areaLeader == '黄德惟长老区长' && dNum < 20){
+                }else if(x.areaLeader == '黄德惟长老' && dNum < 20){
                     results[d].push(x);
                     dNum++;
-                }else if(x.areaLeader == '罗威玲长老区长' && eNum < 20){
+                }else if(x.areaLeader == '罗威玲长老' && eNum < 20){
                     results[e].push(x);
                     eNum++;
                 }
