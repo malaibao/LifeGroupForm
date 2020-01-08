@@ -12,7 +12,7 @@ var data = [
         activity: '小组聚会',
         message: '认识神PPT',
         problem: '下雨天',
-        areaLeader: '张洁慈区长',
+        areaLeader: '张洁慈长老',
         submittedOn: Date.now()
     },
     {
@@ -23,7 +23,7 @@ var data = [
         activity: '小组聚会',
         message: '认识神PPT',
         problem: '赛车',
-        areaLeader: '张洁慈区长',
+        areaLeader: '张洁慈长老',
         submittedOn: Date.now()
     },
 
