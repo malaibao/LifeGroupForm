@@ -41,9 +41,9 @@ app.get('/', (req, res) => {
     res.render('landing');
 })
 
-app.listen(3001, () => {
-    console.log('Server is running.')
-})
+// app.listen(3001, () => {
+//     console.log('Server is running.')
+// })
 
 app.listen(process.env.PORT, process.env.IP, 3001, ()=>{
 	console.log('Server is running. Good');
