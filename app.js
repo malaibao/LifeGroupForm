@@ -34,7 +34,7 @@ app.use(require('express-session')({
 	saveUninitialized: false
 }))
 
-seedDB();
+// seedDB();s
 removeOldData();
 
 app.get('/', (req, res) => {
