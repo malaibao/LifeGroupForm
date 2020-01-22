@@ -118,8 +118,8 @@ router.get('/bccmTable', (req, res)=>{
                 }else if(x.areaLeader == '罗威玲长老' && eNum < 20){
                     results[e].push(x);
                     eNum++;
-                }else if(x.areaLeader == '罗凯伦长老' && eNum < 20){
-                    results[e].push(x);
+                }else if(x.areaLeader == '罗凯伦长老' && fNum < 20){
+                    results[f].push(x);
                     fNum++;
                 }
             });
