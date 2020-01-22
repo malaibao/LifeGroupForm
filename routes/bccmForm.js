@@ -83,18 +83,21 @@ router.get('/bccmTable', (req, res)=>{
                 c = 'c', 
                 d = 'd', 
                 e = 'e';  
+                f = 'f';
             
             var aNum = 0, 
                 bNum = 0, 
                 cNum = 0, 
                 dNum = 0, 
                 eNum = 0; 
+                fNum = 0;
 
                 results[a] = [];
                 results[b] = [];
                 results[c] = [];
                 results[d] = [];
                 results[e] = [];
+                results[f] = [];
 
             submissions.forEach(function(x){
                 // console.log('What is inside a ' + x[a]);
@@ -109,12 +112,15 @@ router.get('/bccmTable', (req, res)=>{
                 }else if(x.areaLeader == '萧植仁区长' && cNum < 20){
                     results[c].push(x);
                     cNum++;
-                }else if(x.areaLeader == '黄德惟长老' && dNum < 20){
+                }else if( (x.areaLeader == '黄德惟长老' || x.areaLeader == '黄德惟长老区长') && dNum < 20){
                     results[d].push(x);
                     dNum++;
                 }else if(x.areaLeader == '罗威玲长老' && eNum < 20){
                     results[e].push(x);
                     eNum++;
+                }else if(x.areaLeader == '罗凯伦长老' && eNum < 20){
+                    results[e].push(x);
+                    fNum++;
                 }
             });
             res.render('bccm/bccmTable', {results: results});

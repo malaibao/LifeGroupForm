@@ -95,23 +95,23 @@ var areaLeaderData = [
         cellGroupLeader:'卓玉庭'
     },
     {   
-        areaLeader: '黄德惟长老区长',
+        areaLeader: '黄德惟长老',
         cellGroupLeader:'郭桂珠'
     },
     {   
-        areaLeader: '黄德惟长老区长',
+        areaLeader: '黄德惟长老',
         cellGroupLeader:'黄健威'
     },
     {   
-        areaLeader: '黄德惟长老区长',
+        areaLeader: '黄德惟长老',
         cellGroupLeader:'雷明珠'
     },
     {   
-        areaLeader: '黄德惟长老区长',
+        areaLeader: '黄德惟长老',
         cellGroupLeader:'杨善荣'
     },
     {   
-        areaLeader: '黄德惟长老区长',
+        areaLeader: '黄德惟长老',
         cellGroupLeader:'杨秀娥'
     },
     {   

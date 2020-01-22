@@ -160,6 +160,30 @@
                     </table>
                 </div>
                 <% } %>
+
+                <% if(results.f.length > 0){ %>
+                    <div class='mb-3 border border-dark'>
+                    <div class='alTitle text-center border-bottom border-dark'><strong><%= results.f[0].areaLeader %></strong></div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">小组组长</th>
+                            <th scope="col">小组活动日期</th>
+                            <th scope="col">提交日期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% results.f.forEach(function(x){ %>
+                                <tr>
+                                    <td><%= x.leader %></td>
+                                    <td><%= x.cellGroupDate.toISOString().substr(0,10) %></td>
+                                    <td><%= x.submittedOn.toISOString().substr(0,10) %></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <% } %>
            
 
                   
