@@ -7,8 +7,8 @@ function removeOldData(){
     
     var d = new Date();
     d = new Date(`${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`);     //create with format 'January 1, 2019'
-    // console.log('WHAT ISSSSSSSSSSSSSSSS' + d.getMonth() - 2);
-    d.setMonth(d.getMonth() - 2);   //minus 1 month
+    // console.log('Whahat the month is + d.getMonth() - 2);
+    d.setMonth(d.getMonth() - 2);   //minus 2 month
     console.log(d.toISOString());
 
     let s = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}T00:00:00+0000`;
